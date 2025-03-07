@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>06 Exercises</title>
+  </head>
+  <body>
+
+    <button onclick="
+      /*6f - 6*/
+
+      let flip = Math.random();
+      let result = '';
+
+      if (flip <= 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+
+      console.log(flip);
+
+      let guess = 'heads';
+
+      if (guess === result) {
+        console.log(`Result is ${result}. You win.`);
+      } else {
+        console.log(`Result is ${result}. You lose.`);
+      }
+    ">Flip a coin!</button>
+
+    <script>
+      /*6a - 6c*/
+      let hour = Math.round(Math.random() * 24);
+
+      if (hour) {
+
+      }
+
+      const name = 'Adrianna';
+
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Time: ${hour} Good morning, ${name}!`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Time: ${hour} Good afternoon, ${name}!`);
+      } else {
+        console.log(`Time: ${hour} Good night, ${name}!`);
+      }
+
+      /*6d - 6e*/
+      let age = 29;
+      const isHoliday = true;
+      
+      if ((age < 6 || age > 65) && !isHoliday) {
+        console.log('Discount.');
+      } else {
+        console.log('No discount.')
+      }
+
+    </script>
+  </body>
+</html>
