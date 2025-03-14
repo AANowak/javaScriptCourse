@@ -6,6 +6,16 @@
   </head>
 
   <body>
+
+    <button onclick="
+      flipCoin('heads');
+    ">heads</button>
+
+    <button onclick="
+      flipCoin('tails');
+    ">tails</button>
+
+
     <script>
       /*8a - 8d*/
       const product1 = {
@@ -48,8 +58,34 @@
 
       console.log('String'.repeat(12));
 
-      
+      /*Coin flip*/
 
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+      
+      function flipCoin(guess) {
+        let flip = Math.random();
+        let result = '';
+
+        if (flip <= 0.5) {
+          result = 'heads';
+        } else {
+          result = 'tails';
+        }
+
+        if (guess === result) {
+          score.wins++;
+          console.log(`You win. Your guess: ${guess}. Coin landed on: ${result}.`);
+        } else {
+          score.losses++;
+          console.log(`You lost. Your guess: ${guess}. Coin landed on: ${result}.`);
+        }
+
+        console.log(score);
+        localStorage.setItem('score', JSON.stringify(score));
+      } 
     </script>
   </body>
 </html>

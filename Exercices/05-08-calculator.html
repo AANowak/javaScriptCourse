@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+
+  </head>
+
+  <body>
+
+    <!--Buttons with numbers, split in 3 rows -->
+    <p>
+      <button onclick="
+        addToCalculation('1');
+      ">1</button>
+
+      <button onclick="
+        addToCalculation('2');
+      ">2</button>
+
+      <button onclick="
+        addToCalculation('3');
+      ">3</button>
+    </p>
+    
+    <p>
+      <button onclick="
+        addToCalculation('4');
+      ">4</button>
+
+      <button onclick="
+        addToCalculation('5');
+      ">5</button>
+
+      <button onclick="
+        addToCalculation('6');
+      ">6</button>
+    </p>
+    
+    <p>
+      <button onclick="
+        addToCalculation('7');
+      ">7</button>
+
+      <button onclick="
+        addToCalculation('8');
+      ">8</button>
+
+      <button onclick="
+        addToCalculation('9');
+      ">9</button>
+    </p>
+    
+    <button onclick="
+      addToCalculation(' + ');
+    ">+</button>
+
+    <button onclick="
+      eval(calculation);
+      calculation = eval(calculation);
+      console.log(calculation);
+    ">=</button>
+
+    <button onclick="
+      calculation = '';
+      console.log(`Calculator reseted.`);
+    ">Reset</button>
+
+    <script>
+      let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+      console.log(calculation);
+
+      function addToCalculation (value) {
+        calculation = calculation + value;
+        localStorage.setItem('calculation', JSON.stringify(calculation));
+        console.log(calculation);
+      }
+
+    </script>
+
+  </body>
+</html>
