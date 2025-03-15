@@ -2,17 +2,8 @@
   <html>
     <head>
       <title>Cart Quantity</title>
-      
-      <style>
-
-      </style>
     </head>
     <body>
-      
-      <p> 
-        Cart Quantity
-      </p>
-
       <button onclick="
         console.log(`Cart quantity: ${cartQuantity}`);
       ">Show Quantity</button>
@@ -55,9 +46,12 @@
         console.log(`Cart quantity: ${cartQuantity}`);
       ">Reset Cart</button>
 
-      <script>
+      <p class="js-display-cart-quantity"></p>
 
-        let cartQuantity = 0; 
+      <script>
+        
+        let cartQuantity = 0;
+        displayQuantity ();         
 
         function updateCartQuantity(change) {
           if (cartQuantity + change > 10) {
@@ -71,7 +65,12 @@
           }
 
           cartQuantity = cartQuantity + change;
-          console.log(`Cart quantity: ${cartQuantity}`);
+          displayQuantity();
+        }
+
+        function displayQuantity () {
+          document.querySelector('.js-display-cart-quantity')
+          .innerHTML = `Cart quantity: ${cartQuantity}`;
         }
 
       </script>

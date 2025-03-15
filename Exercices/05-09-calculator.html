@@ -6,6 +6,8 @@
   </head>
 
   <body>
+    <!-- Calculator's display -->
+     <p class="js-calculator-display"></p>
 
     <!--Buttons with numbers, split in 3 rows -->
     <p>
@@ -57,22 +59,27 @@
     <button onclick="
       eval(calculation);
       calculation = eval(calculation);
-      console.log(calculation);
+      displayCalculation();
     ">=</button>
 
     <button onclick="
       calculation = '';
-      console.log(`Calculator reseted.`);
+      displayCalculation();
     ">Reset</button>
 
     <script>
       let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
-      console.log(calculation);
+      displayCalculation();
 
       function addToCalculation (value) {
         calculation = calculation + value;
         localStorage.setItem('calculation', JSON.stringify(calculation));
-        console.log(calculation);
+        displayCalculation();
+      }
+
+      function displayCalculation() {
+        document.querySelector('.js-calculator-display')
+          .innerHTML = calculation;
       }
 
     </script>
