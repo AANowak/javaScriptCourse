@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <title>Calculator</title>
-
+    <link rel="stylesheet" href="calculator-style.css">
   </head>
 
   <body>
@@ -67,22 +68,6 @@
       displayCalculation();
     ">Reset</button>
 
-    <script>
-      let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
-      displayCalculation();
-
-      function addToCalculation (value) {
-        calculation = calculation + value;
-        localStorage.setItem('calculation', JSON.stringify(calculation));
-        displayCalculation();
-      }
-
-      function displayCalculation() {
-        document.querySelector('.js-calculator-display')
-          .innerHTML = calculation;
-      }
-
-    </script>
-
+    <script src="calculator-script.js"></script>
   </body>
 </html>
