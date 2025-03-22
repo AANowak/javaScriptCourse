@@ -1,4 +1,22 @@
 body {
-  background-color: gray;
+  background-color: black;
+  color: white;
   font-family: 'Roboto';
+  font-size: 30px;
+}
+
+.number-button {
+  background-color: rgb(180, 180, 180);
+  color: black;
+  border-radius: 50px;
+  border: none;
+  padding: 15px 30px;
+}
+
+.action-button {
+  background-color: rgb(255, 90, 20);
+  color: black;
+  border-radius: 50px;
+  border: none;
+  padding: 15px 30px;
 }

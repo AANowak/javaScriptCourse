@@ -12,62 +12,84 @@
 
     <!--Buttons with numbers, split in 3 rows -->
     <p>
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('1');
       ">1</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('2');
       ">2</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('3');
       ">3</button>
+
+      <button class="action-button" onclick="
+        addToCalculation(' + ');
+      ">+</button>
+
+      <button class="action-button" onclick="
+        calculation = '';
+        displayCalculation();
+      ">Reset</button>
     </p>
     
     <p>
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('4');
       ">4</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('5');
       ">5</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('6');
       ">6</button>
+     
+     <button class="action-button" onclick="
+        addToCalculation(' - ');
+      ">-</button>
     </p>
     
     <p>
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('7');
       ">7</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('8');
       ">8</button>
 
-      <button onclick="
+      <button class="number-button" onclick="
         addToCalculation('9');
       ">9</button>
+
+      <button class="action-button" onclick="
+        addToCalculation(' * ');
+      ">*</button>
     </p>
     
-    <button onclick="
-      addToCalculation(' + ');
-    ">+</button>
+    <p>
+      <button class="number-button" onclick="
+        addToCalculation('0');
+      ">0</button>
 
-    <button onclick="
-      eval(calculation);
-      calculation = eval(calculation);
-      displayCalculation();
-    ">=</button>
+      <button class="number-button" onclick="
+        addToCalculation('.');
+      ">.</button>
 
-    <button onclick="
-      calculation = '';
-      displayCalculation();
-    ">Reset</button>
+      <button class="action-button" onclick="
+        eval(calculation);
+        calculation = eval(calculation);
+        displayCalculation();
+      ">=</button>
 
+      <button class="action-button" onclick="
+        addToCalculation(' / ');
+      ">/</button>
+    </p>
+    
     <script src="calculator-script.js"></script>
   </body>
 </html>
