@@ -121,4 +121,58 @@ function countPositive(nums) {
 console.log(countPositive([1, -3, 5]));
 console.log(countPositive([-2, 3, -5, 7, 10]));
 
-/*11*/
+/*11o-11q, combined*/
+
+function findIndex(array, word) {
+  for(let i = 0; i < array.length; i++) {
+    const value = array[i];
+    if (value === word) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+console.log(findIndex(['chips', 'fries', 'milk', 'lettuce'], 'milk'));
+console.log(findIndex(['red', 'blue', 'red'], 'red'));
+console.log(findIndex(['red', 'blue', 'red'], 'yellow'));
+
+/*11w*/
+
+
+
+/*11r-11u*/
+
+function removeEgg(foods) {
+  const foodsValues = foods.slice();
+  const reversedFoods = foodsValues.reverse();
+  const result = [];
+  let eggsRemoved = 0;
+
+  for(let i = 0; i < reversedFoods.length; i++) {
+    if(reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+      eggsRemoved++;
+      continue;
+    }
+    result.push(reversedFoods[i]);
+  }
+  return result.reverse();
+}
+
+const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+console.log(removeEgg(foods));
+console.log(foods);
+
+/*11v*/
+
+for(i = 1; i <= 20; i++) {
+  if(i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz');
+  } else if(i % 5 === 0) {
+    console.log('Buzz');
+  } else if(i % 3 === 0) {
+    console.log('Fizz');
+  } else {
+    console.log(i);
+  }
+}
