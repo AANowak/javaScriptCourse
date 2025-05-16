@@ -8,6 +8,21 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+let isAutoPlaying = false;
+let intervalID = '';
+
+function autoPlay() {
+  if(!isAutoPlaying) {
+    intervalID = setInterval(function() {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalID);
+    isAutoPlaying = false;
+  }
+}
 
 function playGame (playerMove) {
   const computerMove = pickComputerMove();
@@ -78,9 +93,9 @@ function pickComputerMove () {
 
   if (randomNumber >=0 && randomNumber < 1 / 3) {
       computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2/ 3) {
+  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
       computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber <1) {
+  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
       computerMove = 'scissors';
   }
 

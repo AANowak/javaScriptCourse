@@ -137,10 +137,6 @@ console.log(findIndex(['chips', 'fries', 'milk', 'lettuce'], 'milk'));
 console.log(findIndex(['red', 'blue', 'red'], 'red'));
 console.log(findIndex(['red', 'blue', 'red'], 'yellow'));
 
-/*11w*/
-
-
-
 /*11r-11u*/
 
 function removeEgg(foods) {
