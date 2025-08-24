@@ -7,89 +7,95 @@
   </head>
 
   <body>
-    <!-- Calculator's display -->
-     <p class="js-calculator-display"></p>
+    <div class="wave-bg">
+        <div class="calculator-body">
+        <div class="display-box">
+          <!-- Calculator's display -->
+          <p class="js-calculator-display calculator-display-screen"></p>
+        </div>
+        <div class="buttons-box">
 
-    <!--Buttons with numbers, split in 3 rows -->
-    <p>
-      <button class="number-button" onclick="
-        addToCalculation('1');
-      ">1</button>
+            <button class="action-button left-paren" onclick="
+              addToCalculation(' ( ');
+            ">(</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('2');
-      ">2</button>
+            <button class="action-button right-paren" onclick="
+              addToCalculation(' ) ');
+            ">)</button>
+            
+            <button class="action-button reset" onclick="
+              calculation = '';
+              displayCalculation();
+            ">Reset</button>          
+            
+            <button class="number-button one" onclick="
+              addToCalculation('1');
+            ">1</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('3');
-      ">3</button>
+            <button class="number-button two" onclick="
+              addToCalculation('2');
+            ">2</button>
 
-      <button class="action-button" onclick="
-        addToCalculation(' + ');
-      ">+</button>
+            <button class="number-button three" onclick="
+              addToCalculation('3');
+            ">3</button>          
+            
+            <button class="number-button four" onclick="
+              addToCalculation('4');
+            ">4</button>
 
-      <button class="action-button" onclick="
-        calculation = '';
-        displayCalculation();
-      ">Reset</button>
-    </p>
-    
-    <p>
-      <button class="number-button" onclick="
-        addToCalculation('4');
-      ">4</button>
+            <button class="number-button five" onclick="
+              addToCalculation('5');
+            ">5</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('5');
-      ">5</button>
+            <button class="number-button six" onclick="
+              addToCalculation('6');
+            ">6</button>
+          
+            <button class="number-button seven" onclick="
+              addToCalculation('7');
+            ">7</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('6');
-      ">6</button>
-     
-     <button class="action-button" onclick="
-        addToCalculation(' - ');
-      ">-</button>
-    </p>
-    
-    <p>
-      <button class="number-button" onclick="
-        addToCalculation('7');
-      ">7</button>
+            <button class="number-button eight" onclick="
+              addToCalculation('8');
+            ">8</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('8');
-      ">8</button>
+            <button class="number-button nine" onclick="
+              addToCalculation('9');
+            ">9</button>
+            
+            <button class="number-button zero" onclick="
+              addToCalculation('0');
+            ">0</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('9');
-      ">9</button>
+            <button class="action-button plus" onclick="
+              addToCalculation(' + ');
+            ">+</button>
+            
+            <button class="action-button minus" onclick="
+              addToCalculation(' - ');
+            ">-</button>
 
-      <button class="action-button" onclick="
-        addToCalculation(' * ');
-      ">*</button>
-    </p>
-    
-    <p>
-      <button class="number-button" onclick="
-        addToCalculation('0');
-      ">0</button>
+            <button class="action-button multiply" onclick="
+              addToCalculation(' * ');
+            ">*</button>
 
-      <button class="number-button" onclick="
-        addToCalculation('.');
-      ">.</button>
+            <button class="action-button dot" onclick="
+              addToCalculation('.');
+            ">.</button>
 
-      <button class="action-button" onclick="
-        eval(calculation);
-        calculation = eval(calculation);
-        displayCalculation();
-      ">=</button>
+            <button class="action-button equal" onclick="
+              eval(calculation);
+              calculation = eval(calculation);
+              displayCalculation();
+            ">=</button>
 
-      <button class="action-button" onclick="
-        addToCalculation(' / ');
-      ">/</button>
-    </p>
-    
+            <button class="action-button divide" onclick="
+              addToCalculation(' / ');
+            ">/</button>
+        </div> 
+      </div> 
+    </div>  
     <script src="calculator-script.js"></script>
   </body>
 </html>
