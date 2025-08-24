@@ -24,8 +24,7 @@
             ">)</button>
             
             <button class="action-button reset" onclick="
-              calculation = '';
-              displayCalculation();
+              resetCalculation();
             ">Reset</button>          
             
             <button class="number-button one" onclick="
@@ -85,9 +84,7 @@
             ">.</button>
 
             <button class="action-button equal" onclick="
-              eval(calculation);
-              calculation = eval(calculation);
-              displayCalculation();
+              evaluateCalculation()
             ">=</button>
 
             <button class="action-button divide" onclick="
